@@ -1,9 +1,9 @@
 package snacknet;
 
 public class Vendedor {
-    public String nomeVendedor;
-    public String campus;
-    public Integer estoque;
+    private String nomeVendedor;
+    private String campus;
+    private Integer estoque;
 
     public Vendedor registrarVendedor(String nomeVendedor, String campus, Integer estoque)throws Exception{
         if(campus.isEmpty()){
