@@ -5,14 +5,19 @@
  */
 package snacknet;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Usuario {
 	private String nomeUsuario;
 	private int telefone;
 	private String email;
 	private String login;
-	
-	public Usuario() {
-		
+        private String senha;
+	private final List<TipoPagamento> tipoPagamento;
+        
+	public Usuario(String nomeUsuario, String login, String senha, TipoPagamento tp ) {
+		tipoPagamento = new ArrayList();
 	}
 	
 	public void realizarCompra() {

@@ -10,6 +10,7 @@ public class TipoPagamento {
     //Atributos 
     private String metodo;
     private Double valor;
+    private Usuario usuario;
     
 
     
