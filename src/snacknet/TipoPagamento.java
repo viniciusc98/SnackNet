@@ -4,13 +4,18 @@ package snacknet;
 
 /**
  *
- * @author Vinícius de Castro - 12104945
+ * @author Vinícius de Castro
  */
 public class TipoPagamento {
     //Atributos 
     private String metodo;
     private Double valor;
     private Usuario usuario;
+    
+    
+    public void RealizarCompra(){
+        
+    }
     
 
     

@@ -1,7 +1,7 @@
 package snacknet;
 
 import java.util.Objects;
-
+//Criar identificador 
 public class Vendedor {
     private String nomeVendedor;
     private String campus;

@@ -5,9 +5,11 @@
  */
 package snacknet;
 
+import java.util.Objects;
+
 /**
  *
- * @author castr
+ * @author Vinícius de Castro   
  */
 public class Entrega {
     private String local;
@@ -15,6 +17,37 @@ public class Entrega {
     private Double numero_pedido;
     private String avaliacao;
     private Boolean entregue;
+
+    @Override
+    public String toString() {
+        return "Entrega{" + "local=" + local + ", avaliacao=" + avaliacao + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + Objects.hashCode(this.numero_pedido);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Entrega other = (Entrega) obj;
+        if (!Objects.equals(this.numero_pedido, other.numero_pedido)) {
+            return false;
+        }
+        return true;
+    }
+    
     
     
     public Entrega RegistrarEntrega(Double numero_pedido, String horario, String local) throws Exception{
