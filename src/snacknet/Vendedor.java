@@ -1,15 +1,20 @@
 package snacknet;
-
 import java.util.Objects;
-//Criar identificador 
-public class Vendedor {
-    private String nomeVendedor;
+
+public class Vendedor extends Usuario{
+    private Integer id;
     private String campus;
     private Integer estoque;
 
     // Metodo construtor: 
-    public Vendedor(String nomeVendedor, String campus, Integer estoque) {
-        this.nomeVendedor = nomeVendedor;
+    public Vendedor( 
+            String campus, 
+            Integer estoque, 
+            String nomeUsuario, 
+            String login, 
+            String senha, 
+            TipoPagamento tp) {
+        super(nomeUsuario, login, senha, tp);
         this.campus = campus;
         this.estoque = estoque;
     }
@@ -18,7 +23,7 @@ public class Vendedor {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.estoque);
+        hash = 41 * hash + Objects.hashCode(this.getEstoque());
         return hash;
     }
 
@@ -43,30 +48,42 @@ public class Vendedor {
     // Metodo toString:
     @Override
     public String toString() {
-        return "Vendedor{" + "nomeVendedor=" + nomeVendedor + ", campus=" + campus + '}';
+        return "Vendedor{" + super.toString() + ", campus=" + getCampus() + '}';
     }
     
     // Metodos Especiais:
-    public String getNomeVendedor() {
-        return nomeVendedor;
-    }
-    
-    public void setNomeVendedor(String nomeVendedor) {
-        this.nomeVendedor = nomeVendedor;
+
+    /**
+     * @return the id
+     */
+    public Integer getId() {
+        return id;
     }
 
+    /**
+     * @return the campus
+     */
     public String getCampus() {
         return campus;
     }
 
+    /**
+     * @param campus the campus to set
+     */
     public void setCampus(String campus) {
         this.campus = campus;
     }
 
+    /**
+     * @return the estoque
+     */
     public Integer getEstoque() {
         return estoque;
     }
 
+    /**
+     * @param estoque the estoque to set
+     */
     public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
