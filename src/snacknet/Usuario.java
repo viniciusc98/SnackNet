@@ -16,11 +16,13 @@ public class Usuario {
 	private String login;
         private String senha;
 
+    //Retorna um uma apresentação textual do objeto    
     @Override
     public String toString() {
         return "Usuario{" + "nomeUsuario=" + nomeUsuario + ", email=" + email + ", login=" + login + ", senha=" + senha + '}';
     }
 
+    //O HashCode gera um número único para os atributos serem salvos na memória
     @Override
     public int hashCode() {
         int hash = 3;
@@ -29,6 +31,7 @@ public class Usuario {
         return hash;
     }
 
+    //Compara os valores dos atributos, para verificar se são iguais na memória
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

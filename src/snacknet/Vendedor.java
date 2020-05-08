@@ -14,14 +14,15 @@ public class Vendedor {
         this.estoque = estoque;
     }
     
-    // Metodo hashCode e equals:
+    //O HashCode gera um número único para os atributos serem salvos na memória
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.estoque);
+        hash = 41 * hash + Objects.hashCode(this.getEstoque());
         return hash;
     }
 
+    //Compara os valores dos atributos, para verificar se são iguais na memória
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -40,36 +41,56 @@ public class Vendedor {
         return true;
     }
     
-    // Metodo toString:
+    //Retorna um uma apresentação textual do objeto 
     @Override
     public String toString() {
-        return "Vendedor{" + "nomeVendedor=" + nomeVendedor + ", campus=" + campus + '}';
+        return "Vendedor{" + "nomeVendedor=" + getNomeVendedor() + ", campus=" + getCampus() + '}';
     }
-    
-    // Metodos Especiais:
+
+    /**
+     * @return the nomeVendedor
+     */
     public String getNomeVendedor() {
         return nomeVendedor;
     }
-    
+
+    /**
+     * @param nomeVendedor the nomeVendedor to set
+     */
     public void setNomeVendedor(String nomeVendedor) {
         this.nomeVendedor = nomeVendedor;
     }
 
+    /**
+     * @return the campus
+     */
     public String getCampus() {
         return campus;
     }
 
+    /**
+     * @param campus the campus to set
+     */
     public void setCampus(String campus) {
         this.campus = campus;
     }
 
+    /**
+     * @return the estoque
+     */
     public Integer getEstoque() {
         return estoque;
     }
 
+    /**
+     * @param estoque the estoque to set
+     */
     public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
+    
+    
+    
     
     
 }

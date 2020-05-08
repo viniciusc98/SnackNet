@@ -18,11 +18,13 @@ public class Entrega {
     private String avaliacao;
     private Boolean entregue;
 
+    //Retorna um uma apresentação textual do objeto
     @Override
     public String toString() {
         return "Entrega{" + "local=" + local + ", avaliacao=" + avaliacao + '}';
     }
 
+    //O HashCode gera um número único para os atributos serem salvos na memória
     @Override
     public int hashCode() {
         int hash = 7;
@@ -30,6 +32,7 @@ public class Entrega {
         return hash;
     }
 
+    //Compara os valores dos atributos, para verificar se são iguais na memória
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -49,7 +52,7 @@ public class Entrega {
     }
     
     
-    
+    //Método que registra a entrega para o vendedor administrar o negócio 
     public Entrega RegistrarEntrega(Double numero_pedido, String horario, String local) throws Exception{
         
         if(local.isEmpty()){
@@ -68,11 +71,13 @@ public class Entrega {
         return entrega;
     }
     
+    //Método que confirma a entrega para o usuário
     public Entrega confirmarEntrega(Entrega entrega){
         entrega.setEntregue(true);
         return entrega;
     }
     
+    //Métoddo que disponibiliza ao usuário, uma avaliação da entrega
     public Entrega avaliarEntrega(Entrega entrega, String avaliacao) throws Exception{
         if(!entrega.getEntregue()){
             throw new Exception("Seu pedido ainda nao foi entregue");
