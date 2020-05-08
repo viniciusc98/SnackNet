@@ -1,25 +1,37 @@
 package snacknet;
-
 import java.util.Objects;
-//Criar identificador 
-public class Vendedor {
-    private String nomeVendedor;
+
+public class Vendedor extends Usuario{
+    private Integer id;
     private String campus;
     private Integer estoque;
-
-    // Metodo construtor: 
-    public Vendedor(String nomeVendedor, String campus, Integer estoque) {
-        this.nomeVendedor = nomeVendedor;
-        this.campus = campus;
-        this.estoque = estoque;
-    }
     
     //O HashCode gera um número único para os atributos serem salvos na memória
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.getEstoque());
+        hash = 79 * hash + Objects.hashCode(this.id);
         return hash;
+    }
+    
+    //Retorna um uma apresentação textual do objeto
+    @Override
+    public String toString() {
+        return "Vendedor{" + "campus=" + campus + ", estoque=" + estoque + '}';
+    }
+    
+    
+    // Metodo construtor: 
+    public Vendedor( 
+            String campus, 
+            Integer estoque, 
+            String nomeUsuario, 
+            String login, 
+            String senha, 
+            TipoPagamento tp) {
+        super(nomeUsuario, login, senha, tp);
+        this.campus = campus;
+        this.estoque = estoque;
     }
 
     //Compara os valores dos atributos, para verificar se são iguais na memória
@@ -40,25 +52,19 @@ public class Vendedor {
         }
         return true;
     }
-    
-    //Retorna um uma apresentação textual do objeto 
-    @Override
-    public String toString() {
-        return "Vendedor{" + "nomeVendedor=" + getNomeVendedor() + ", campus=" + getCampus() + '}';
+
+    /**
+     * @return the id
+     */
+    public Integer getId() {
+        return id;
     }
 
     /**
-     * @return the nomeVendedor
+     * @param id the id to set
      */
-    public String getNomeVendedor() {
-        return nomeVendedor;
-    }
-
-    /**
-     * @param nomeVendedor the nomeVendedor to set
-     */
-    public void setNomeVendedor(String nomeVendedor) {
-        this.nomeVendedor = nomeVendedor;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**
@@ -88,9 +94,5 @@ public class Vendedor {
     public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
-    
-    
-    
-    
     
 }
