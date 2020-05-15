@@ -1,4 +1,5 @@
 package snacknet;
+import java.util.List;
 import java.util.Objects;
 
 public class Vendedor extends Usuario{
@@ -19,21 +20,17 @@ public class Vendedor extends Usuario{
     public String toString() {
         return "Vendedor{" + "campus=" + campus + ", estoque=" + estoque + '}';
     }
-    
-    
-    // Metodo construtor: 
-    public Vendedor( 
-            String campus, 
-            Integer estoque, 
-            String nomeUsuario, 
-            String login, 
-            String senha, 
-            TipoPagamento tp) {
-        super(nomeUsuario, login, senha, tp);
+
+    //Método para realização da construção da classe
+    public Vendedor(Integer id, String campus, Integer estoque, String nomeUsuario, int telefone, String email, String login, String senha) {
+        super(nomeUsuario, telefone, email, login, senha);
+        this.id = id;
         this.campus = campus;
         this.estoque = estoque;
     }
-
+    
+    
+    
     //Compara os valores dos atributos, para verificar se são iguais na memória
     @Override
     public boolean equals(Object obj) {

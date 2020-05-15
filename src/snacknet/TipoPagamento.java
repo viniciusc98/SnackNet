@@ -11,15 +11,25 @@ public class TipoPagamento {
     private String metodo;
     private Double valor;
     private Usuario usuario;
-    
-    //Retorna um uma apresentação textual do objeto
-    @Override
-    public String toString() {
-        return "TipoPagamento{" + "metodo=" + metodo + ", valor=" + valor + '}';
+
+    public TipoPagamento(String metodo, Double valor, Usuario usuario) {
+        this.metodo = metodo;
+        this.valor = valor;
+        this.usuario = usuario;
     }
     
-    public void RealizarCompra(){
+    
+    
+    //Retorna um uma apresentação textual do objeto
+    
+    
+    @Override
+    public String toString(){
+        return "TipoPagamento{" + "metodo=" + metodo + ", valor=" + valor + ", usuario=" + usuario + '}';
         
+    }
+
+    public void RealizarCompra() {
     }
 
     /**

@@ -18,6 +18,16 @@ public class Entrega {
     private String avaliacao;
     private Boolean entregue;
 
+    public Entrega(String local, String horario, Double numero_pedido, String avaliacao) {
+        this.local = local;
+        this.horario = horario;
+        this.numero_pedido = numero_pedido;
+        this.avaliacao = avaliacao;
+        
+    }
+
+    
+    
     //Retorna um uma apresentação textual do objeto
     @Override
     public String toString() {
@@ -62,13 +72,7 @@ public class Entrega {
         if(numero_pedido == null){
             throw new Exception("Número do pedido é inválido");
         }
-        Entrega entrega = new Entrega();
-        
-        entrega.setLocal(local);
-        entrega.setHorario(horario);
-        entrega.setNumero_pedido(numero_pedido);
-        entrega.setEntregue(false);
-        return entrega;
+        return null;
     }
     
     //Método que confirma a entrega para o usuário

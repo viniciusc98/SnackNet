@@ -16,6 +16,15 @@ public class Usuario {
 	private String login;
         private String senha;
 
+    //Método para realização da construção da classe
+    public Usuario(String nomeUsuario, int telefone, String email, String login, String senha) {
+        this.nomeUsuario = nomeUsuario;
+        this.telefone = telefone;
+        this.email = email;
+        this.login = login;
+        this.senha = senha;
+    }
+
     //Retorna um uma apresentação textual do objeto    
     @Override
     public String toString() {
@@ -55,9 +64,7 @@ public class Usuario {
 	
         private List<TipoPagamento> tipoPagamento;
         
-	public Usuario(String nomeUsuario, String login, String senha, TipoPagamento tp ) {
-		tipoPagamento = new ArrayList();
-	}
+	
 	
 	public void realizarCompra() {
 		
